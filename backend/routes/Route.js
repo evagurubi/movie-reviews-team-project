@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const fetch = require("node-fetch");
 const jwt_decode = require("jwt-decode");
-const jwt = require("jsonwebtoken");
-
-const tokentoken = {};
+//const jwt = require("jsonwebtoken");
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -30,11 +28,24 @@ router.post("/login", (req, res) => {
   .then((data) => {
     const token = data.id_token;
     const decoded = jwt_decode(token);
-    console.log(decoded);
+   // console.log(decoded);
 
     if (!decoded) {
-      return res.status(400).json("Invalid code")
+      return res.status(400).json(null)
     }
+
+    const user = new User({
+      email: decoded.email,
+      given_name: decoded.given_name,
+      google_id: decoded.sub,
+    });
+
+    user.save();
+    // User.findOne({ sub: decoded.sub }).then((person) => {
+    //   //console.log("FINDONE");
+    //   if (!person) user.save();
+    // });
+
   })
 })
 

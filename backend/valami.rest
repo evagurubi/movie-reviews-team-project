@@ -1,0 +1,27 @@
+
+###
+//PUT http://localhost:5000/api/appointment
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{ "email": "decoded.email",
+      "given_name": "decoded.name",
+      "google_id": "decoded.sub",}
+
+# ###
+# GET http://localhost:5000/api/appointment/60f0b8b15aa36601cc23fe51
+
+# ###
+# DELETE http://localhost:5000/api/appointment/60f0b8b15aa36601cc23fe51
+
+# # ###
+# PATCH http://localhost:5000/api/appointment/60f0b9595aa36601cc23fe60
+# Content-Type: application/json
+
+# { 
+#     "startDate": "2023-10-31",
+#     "startTime": "18:06",
+#     "endDate": "2023-10-31",
+#     "endTime": "18:10",
+#     "comment": "updated"}
+
