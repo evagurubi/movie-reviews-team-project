@@ -31,6 +31,10 @@ router.post("/login", (req, res) => {
     const token = data.id_token;
     const decoded = jwt_decode(token);
     console.log(decoded);
+
+    if (!decoded) {
+      return res.status(400).json("Invalid code")
+    }
   })
 })
 
