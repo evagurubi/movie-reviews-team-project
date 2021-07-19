@@ -1,3 +1,3 @@
 {
-    "mongoURI": "mongodb+srv://miyaa:asd123@cluster0.herda.mongodb.net/moviereviews?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://GoogleAuthUser:GoogleAuthUser44@cluster0.nb561.mongodb.net/movieReviewsDB?retryWrites=true&w=majority"
 }
