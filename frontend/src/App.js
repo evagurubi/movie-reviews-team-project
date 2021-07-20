@@ -4,10 +4,20 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import MoviePage from "./pages/MoviePage";
-//import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 
 function App() {
- 
+
+const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    let token = localStorage.getItem("myToken");
+    try {
+      if (jwt_decode(token)) setUser(jwt_decode(token));
+    } catch {
+      return;
+    }
+  }, []);
 
   return (
     <Router>

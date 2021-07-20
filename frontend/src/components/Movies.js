@@ -5,7 +5,7 @@ function Movies() {
     
     const url = new URL(window.location.href);
     const code = url.searchParams.get("code");
-    console.log(code);
+    //console.log(code);
 
     fetch("/api/login", {
       method: "POST",
@@ -16,11 +16,11 @@ function Movies() {
     })
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data); // the token
+      console.log(data); // myToken
       // if (!data.token) {
       //   return history.push("/");
       // }
-      // localStorage.setItem('myToken', data.token);
+      localStorage.setItem('myToken', data.myToken);
       // login();
       
       // history.push("/"); // can be used in javascript, redirects to home like Link would (inside return), or like Redirect would
