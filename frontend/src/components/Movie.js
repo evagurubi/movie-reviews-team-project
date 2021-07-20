@@ -3,7 +3,7 @@ import React from "react";
 function Movie({ item }) {
   return (
     <div>
-      <p>Hello</p>
+      <p>hello</p>
     </div>
   );
 }
