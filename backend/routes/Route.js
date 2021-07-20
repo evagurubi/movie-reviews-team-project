@@ -60,4 +60,12 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.get("/fetchmovies", (req, res) => {
+  fetch(
+    "https://api.themoviedb.org/3/movie/550?api_key=57cbfa5ccc0ed1de4877b2f8f5a36d30"
+  )
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+});
+
 module.exports = router;
