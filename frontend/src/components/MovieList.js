@@ -28,10 +28,15 @@ function MovieList() {
     <div>
       {data !== undefined
         ? data.results.map((item) => (
+<<<<<<< HEAD
             <h1>{item.title}</h1>
             // <Movie item={item} key={item.id} />;
           ))
         : "Loading..."}
+=======
+          <Movie item={item} key={item.id} />
+        )) : "Loading"}
+>>>>>>> a642bc2d2e1313d5192cd46293bd1e78d14e7b9b
     </div>
   );
 }
