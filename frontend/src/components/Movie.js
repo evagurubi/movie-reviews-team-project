@@ -3,7 +3,9 @@ import React from "react";
 function Movie({ item }) {
   return (
     <div>
-      <p>Hello</p>
+      <p>{item.title}</p>
+      <p>{item.release_date}</p>
+      <p>{item.overview}</p>
     </div>
   );
 }

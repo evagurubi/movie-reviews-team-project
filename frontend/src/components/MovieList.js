@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Movie from "./Movie";
 
 function MovieList() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(undefined);
 
   const fetchData = async () => {
     fetch(
@@ -26,11 +26,10 @@ function MovieList() {
 
   return (
     <div>
-      <Movie />
-      {data &&
-        data.results.map((item, i) => {
-          <Movie item={item} key={i} />;
-        })}
+      {data !== undefined
+        ? data.results.map((item) => (
+          <Movie item={item} key={item.id} />
+        )) : "Loading"}
     </div>
   );
 }
