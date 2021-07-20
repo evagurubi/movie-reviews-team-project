@@ -15,7 +15,7 @@ function Movies() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // myToken
+        // console.log(data); // myToken
         // if (!data.token) {
         //   return history.push("/");
         // }
