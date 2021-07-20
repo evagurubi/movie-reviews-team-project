@@ -2,7 +2,7 @@ const router = require("express").Router();
 const fetch = require("node-fetch");
 const jwt_decode = require("jwt-decode");
 const User = require("../models/user.model");
-//const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -29,7 +29,7 @@ router.post("/login", (req, res) => {
     .then((data) => {
       const token = data.id_token;
       const decoded = jwt_decode(token);
-      // console.log(decoded);
+      //console.log(decoded);
 
       if (!decoded) {
         return res.status(400).json(null);
@@ -41,11 +41,22 @@ router.post("/login", (req, res) => {
         google_id: decoded.sub,
       });
 
-      user.save();
       User.findOne({ sub: decoded.sub }).then((person) => {
-        console.log("FINDONE");
+        //console.log("FINDONE");
         if (!person) user.save();
       });
+
+      const myToken = jwt.sign(
+        {
+          google_id: decoded.sub,
+          email: decoded.email,
+          user_pic: decoded.picture,
+          given_name: decoded.given_name,
+        },
+        "Signed by me"
+      );
+
+      res.header("auth-token", token).json({ myToken });
     });
 });
 
