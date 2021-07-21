@@ -23,9 +23,10 @@ function ReviewList() {
 
   return (
     <div>
-      {reviewData !== undefined
+      Search Reviews
+      {/* {reviewData !== undefined
         ? reviewData.map((rev, i) => <Review rev={rev} key={i} />)
-        : "Loading"}
+        : "Loading"} */}
     </div>
   );
 }
