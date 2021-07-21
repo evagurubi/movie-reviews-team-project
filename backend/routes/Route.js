@@ -63,4 +63,6 @@ router.post("/login", (req, res) => {
 
 router.post("/review", ReviewController.insert);
 
+router.get("/review", ReviewController.list);
+
 module.exports = router;

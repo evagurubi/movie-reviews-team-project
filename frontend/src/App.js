@@ -1,14 +1,13 @@
-
-import './App.css';
+import "./App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import MoviePage from "./pages/MoviePage";
 import jwt_decode from "jwt-decode";
+import ReviewPage from "./pages/ReviewPage";
 
 function App() {
-
-const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     let token = localStorage.getItem("myToken");
@@ -24,8 +23,9 @@ const [user, setUser] = useState(null)
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/movies" exact component={MoviePage} />
+        {/*<Route path="/reviews" exact component={ReviewPage} />*/}
       </Switch>
-  </Router>
+    </Router>
   );
 }
 
