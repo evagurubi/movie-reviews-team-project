@@ -1,9 +1,11 @@
 import { useState } from "react";
+import jwt_decode from "jwt-decode";
 
 function Movie({ item }) {
   const [showWriteReview, setShowWriteReview] = useState(false);
-  const [newReview, setNewReview] = useState("");
   const [review, setReview] = useState("");
+
+  const decoded = jwt_decode(localStorage.getItem('myToken'));
 
   const sendData = async (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ function Movie({ item }) {
         title: item.title,
         content: review,
         movie_id: item.id,
-        reviewer: "Someone"
+        reviewer: decoded.sub
       }),
     });
     const result = await response.json();
