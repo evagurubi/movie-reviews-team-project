@@ -6,6 +6,7 @@ function Movie({ item }) {
   const [review, setReview] = useState("");
 
   const decoded = jwt_decode(localStorage.getItem('myToken'));
+  console.log(decoded.google_id);
 
   const sendData = async (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ function Movie({ item }) {
         title: item.title,
         content: review,
         movie_id: item.id,
-        reviewer: decoded.sub
+        reviewer: decoded.google_id,
       }),
     });
     const result = await response.json();
