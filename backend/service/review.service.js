@@ -5,3 +5,7 @@ exports.createReview = async (reviewBody) => {
 
   return review.save();
 };
+
+exports.list = async () => {
+  return await Review.find();
+};
