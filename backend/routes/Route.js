@@ -42,7 +42,7 @@ router.post("/login", (req, res) => {
         google_id: decoded.sub,
       });
 
-      User.findOne({ sub: decoded.sub }).then((person) => {
+      User.findOne({ google_id: decoded.sub }).then((person) => {
         //console.log("FINDONE");
         if (!person) user.save();
       });
