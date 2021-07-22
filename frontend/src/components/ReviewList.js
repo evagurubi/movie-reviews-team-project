@@ -8,7 +8,6 @@ function ReviewList() {
   const [showAll, setShowAll] = useState(true);
   const [inputText, setSetInputText] = useState("");
 
-
   const fetchReviews = async () => {
     setShowAll(true);
     fetch("/api/review")
@@ -25,28 +24,23 @@ function ReviewList() {
 
   const searchHandler = (e) => {
     setShowAll(false);
-
-
-  }
+  };
 
   return (
     <div>
       <button onClick={fetchReviews}>All Reviews</button>
 
-      {reviewData !== undefined && showAll
-        && reviewData.map((rev, i) => <Review rev={rev} key={i} />)}
+      {reviewData !== undefined &&
+        showAll &&
+        reviewData.map((rev, i) => <Review rev={rev} key={i} />)}
 
       <button onClick={() => setPlaceholder(!placeholder)}>Search by</button>
-      
 
-
-      <input 
-        placeholder={ placeholder
-          ? "movie"
-          : "reviewer"} 
+      <input
+        placeholder={placeholder ? "movie" : "reviewer"}
         onInput={searchHandler}
         value={inputText}
-        ></input>
+      ></input>
     </div>
   );
 }
