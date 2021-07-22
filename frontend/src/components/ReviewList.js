@@ -40,7 +40,6 @@ function ReviewList() {
         placeholder={placeholder ? "movie" : "reviewer"}
         onInput={searchHandler}
         value={inputText}
-        onKeyPress={inputEnter}
       ></input>
     </div>
   );
