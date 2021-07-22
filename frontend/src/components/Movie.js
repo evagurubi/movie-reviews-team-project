@@ -26,6 +26,7 @@ function Movie({ item }) {
     });
     const result = await response.json();
     console.log(result);
+    setReview("")
   };
 
   return (
@@ -42,6 +43,7 @@ function Movie({ item }) {
             type="text"
             placeholder="Your review of the film"
             onChange={(e) => setReview(e.target.value)}
+            value={review}
           />
           <input type="submit" value="SUBMIT" />
         </form>
