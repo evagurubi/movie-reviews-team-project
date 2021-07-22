@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Movies() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function Movies() {
   return (
     <div>
       <h2>Logged in</h2>
+      <Link to="/reviews">Reviews</Link>
     </div>
   );
 }
