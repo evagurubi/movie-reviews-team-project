@@ -6,6 +6,7 @@ function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
   const [placeholder, setPlaceholder] = useState(true);
   const [showAll, setShowAll] = useState(true);
+  const [inputText, setSetInputText] = useState("");
 
 
   const fetchReviews = async () => {
@@ -24,6 +25,8 @@ function ReviewList() {
 
   const searchHandler = (e) => {
     setShowAll(false);
+
+
   }
 
   return (
@@ -37,9 +40,13 @@ function ReviewList() {
       
 
 
-      <input placeholder={ placeholder
+      <input 
+        placeholder={ placeholder
           ? "movie"
-          : "reviewer"} onChange={searchHandler}></input>
+          : "reviewer"} 
+        onInput={searchHandler}
+        value={inputText}
+        onKeyPress={inputEnter}></input>
     </div>
   );
 }
