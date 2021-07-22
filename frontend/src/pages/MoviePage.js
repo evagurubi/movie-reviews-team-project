@@ -9,8 +9,8 @@ function MoviePage() {
     <div>
       <Movies />
       <Logout />
-      <MovieList />
       <ReviewList />
+      <MovieList />
     </div>
   );
 }

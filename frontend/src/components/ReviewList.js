@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-//import Review from "./Review";
+import Review from "./Review";
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
+
   const fetchReviews = async () => {
     fetch("/api/review")
       .then((res) => {
@@ -17,16 +18,13 @@ function ReviewList() {
       });
   };
 
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-
   return (
     <div>
-      Search Reviews
-      {/* {reviewData !== undefined
+      <button onClick={fetchReviews}>Search Reviews</button>
+
+      {reviewData !== undefined
         ? reviewData.map((rev, i) => <Review rev={rev} key={i} />)
-        : "Loading"} */}
+        : "Loading"}
     </div>
   );
 }
