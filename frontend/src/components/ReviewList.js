@@ -4,7 +4,6 @@ import Review from "./Review";
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
-
   const fetchReviews = async () => {
     fetch("/api/review")
       .then((res) => {

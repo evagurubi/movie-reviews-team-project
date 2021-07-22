@@ -24,7 +24,10 @@ exports.list = (movie, reviewer) => {
       });
     }
     if (movie) {
-      Review.find({ title: movie }).exec(function (err, reviews) {
+      Review.find({ title: { $regex: movie, $options: "i" } }).exec(function (
+        err,
+        reviews
+      ) {
         if (err) {
           reject(err);
         } else {
