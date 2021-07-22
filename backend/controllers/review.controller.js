@@ -7,5 +7,17 @@ exports.insert = (req, res) => {
 };
 
 exports.list = (req, res) => {
-  Review.list().then((result) => res.status(200).send(result));
+  let movie = null;
+  let reviewer = null;
+
+  if (req.query) {
+    if (req.query.movie) {
+      movie = req.query.movie;
+    }
+    if (req.query.reviewer) {
+      reviewer = req.query.reviewer;
+    }
+  }
+
+  Review.list(movie, reviewer).then((result) => res.status(200).send(result));
 };

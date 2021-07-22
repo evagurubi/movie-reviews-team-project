@@ -6,6 +6,50 @@ exports.createReview = async (reviewBody) => {
   return review.save();
 };
 
-exports.list = async () => {
-  return await Review.find();
+exports.list = (movie, reviewer) => {
+  // return await Review.find();
+
+  return new Promise((resolve, reject) => {
+    if (movie && reviewer) {
+      Review.find({ title: movie, reviewer: reviewer }).exec(function (
+        err,
+        reviews
+      ) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reviews);
+          // console.log(reviews);
+        }
+      });
+    }
+    if (movie) {
+      Review.find({ title: movie }).exec(function (err, reviews) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reviews);
+          // console.log(reviews);
+        }
+      });
+    }
+    if (reviewer) {
+      Review.find({ reviewer: reviewer }).exec(function (err, reviews) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reviews);
+          // console.log(reviews);
+        }
+      });
+    } else
+      Review.find().exec(function (err, reviews) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reviews);
+          //  console.log(appointments);
+        }
+      });
+  });
 };
