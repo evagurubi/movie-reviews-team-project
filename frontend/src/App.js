@@ -8,14 +8,14 @@ import jwt_decode from "jwt-decode";
 function App() {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     let token = localStorage.getItem("myToken");
     try {
       if (jwt_decode(token)) setUser(jwt_decode(token));
     } catch {
       return;
     }
-  }, []);
+  }, []);*/
 
   return (
     <Router>

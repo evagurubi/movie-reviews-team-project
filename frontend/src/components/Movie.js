@@ -5,8 +5,8 @@ function Movie({ item }) {
   const [showWriteReview, setShowWriteReview] = useState(false);
   const [review, setReview] = useState("");
 
-  const decoded = jwt_decode(localStorage.getItem('myToken'));
-  console.log(decoded.google_id);
+  const decoded = jwt_decode(localStorage.getItem("myToken"));
+  // console.log(decoded);
 
   const sendData = async (e) => {
     e.preventDefault();
@@ -20,24 +20,32 @@ function Movie({ item }) {
         content: review,
         movie_id: item.id,
         reviewer: decoded.google_id,
+        reviewer_name: decoded.given_name,
+        picture: decoded.user_pic,
       }),
     });
     const result = await response.json();
     console.log(result);
-    
-  }
+  };
 
   return (
     <div>
       <p>{item.title}</p>
       <p>{item.release_date}</p>
       <p>{item.overview}</p>
-      <button onClick={() => setShowWriteReview(!showWriteReview)}>Leave Review</button>
-      {showWriteReview && 
-      <form onSubmit={sendData}>
-        <input type="text" placeholder="Your review of the film" onChange={(e) => setReview(e.target.value)} />
-        <input type="submit" value="SUBMIT"  />
-      </form>}
+      <button onClick={() => setShowWriteReview(!showWriteReview)}>
+        Leave Review
+      </button>
+      {showWriteReview && (
+        <form onSubmit={sendData}>
+          <input
+            type="text"
+            placeholder="Your review of the film"
+            onChange={(e) => setReview(e.target.value)}
+          />
+          <input type="submit" value="SUBMIT" />
+        </form>
+      )}
     </div>
   );
 }

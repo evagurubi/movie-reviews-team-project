@@ -19,6 +19,7 @@ function Movies() {
         // if (!data.token) {
         //   return history.push("/");
         // }
+
         localStorage.setItem("myToken", data.myToken);
         // login();
 

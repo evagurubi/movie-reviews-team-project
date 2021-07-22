@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Review from "./Review";
+//import Review from "./Review";
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);

@@ -5,6 +5,8 @@ const reviewSchema = new mongoose.Schema({
   content: { type: String },
   movie_id: { type: String },
   reviewer: { type: String },
+  reviewer_name: { type: String },
+  picture: { type: String },
 });
 
 module.exports = mongoose.model("Review", reviewSchema);
