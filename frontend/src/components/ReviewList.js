@@ -29,6 +29,8 @@ function ReviewList() {
     setSetInputText(e.target.value);
     if (placeholder) {
       setQuery(`movie=${inputText}`)
+    } else {
+      setQuery(`movie=${inputText}`)
     }
     //if (inputText.length > 1) fetchReviewsWithQuery();
   };
@@ -50,7 +52,6 @@ function ReviewList() {
   useEffect(() => {
     fetchReviewsWithQuery();
   }, [inputText])
-
   
 
   return (
