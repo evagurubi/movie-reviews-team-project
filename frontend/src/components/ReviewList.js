@@ -30,7 +30,7 @@ function ReviewList() {
     if (placeholder) {
       setQuery(`movie=${inputText}`)
     } else {
-      setQuery(`movie=${inputText}`)
+      setQuery(`reviewer=${inputText}`)
     }
     //if (inputText.length > 1) fetchReviewsWithQuery();
   };
