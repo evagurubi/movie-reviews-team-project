@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import MoviePage from "./pages/MoviePage";
-import jwt_decode from "jwt-decode";
+import ReviewPage from "./pages/ReviewPage";
+// import jwt_decode from "jwt-decode";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,7 +23,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/movies" exact component={MoviePage} />
-        {/*<Route path="/reviews" exact component={ReviewPage} />*/}
+        <Route path="/reviews" exact component={ReviewPage} />
       </Switch>
     </Router>
   );
