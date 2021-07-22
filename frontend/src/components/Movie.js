@@ -34,6 +34,7 @@ function Movie({ item }) {
       <p>{item.title}</p>
       <p>{item.release_date}</p>
       <p>{item.overview}</p>
+      <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}></img>
       <button onClick={() => setShowWriteReview(!showWriteReview)}>
         Leave Review
       </button>
