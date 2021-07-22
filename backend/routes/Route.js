@@ -4,6 +4,7 @@ const jwt_decode = require("jwt-decode");
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const ReviewController = require("../controllers/review.controller");
+const verifyToken = require("../middlewares/veryfyToken");
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -63,7 +64,7 @@ router.post("/login", (req, res) => {
     });
 });
 
-router.post("/review", ReviewController.insert);
+router.post("/review", verifyToken, ReviewController.insert);
 
 router.get("/review", ReviewController.list);
 
