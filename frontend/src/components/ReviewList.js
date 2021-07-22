@@ -46,7 +46,7 @@ function ReviewList() {
           : "reviewer"} 
         onInput={searchHandler}
         value={inputText}
-        onKeyPress={inputEnter}></input>
+        ></input>
     </div>
   );
 }
