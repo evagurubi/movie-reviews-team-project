@@ -11,10 +11,10 @@ exports.list = (movie, reviewer) => {
 
   return new Promise((resolve, reject) => {
     if (movie && reviewer) {
-      Review.find({ title: movie, reviewer: reviewer }).exec(function (
-        err,
-        reviews
-      ) {
+      Review.find({
+        title: { $regex: movie, $options: "i" },
+        reviewer_name: reviewer,
+      }).exec(function (err, reviews) {
         if (err) {
           reject(err);
         } else {
@@ -37,7 +37,7 @@ exports.list = (movie, reviewer) => {
       });
     }
     if (reviewer) {
-      Review.find({ reviewer: reviewer }).exec(function (err, reviews) {
+      Review.find({ reviewer_name: reviewer }).exec(function (err, reviews) {
         if (err) {
           reject(err);
         } else {

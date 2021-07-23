@@ -14,7 +14,10 @@ function Movie({ item }) {
 
     const response = await fetch("/api/review", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("myToken"),
+      },
       // username = username: username
       body: JSON.stringify({
         title: item.title,
@@ -25,9 +28,9 @@ function Movie({ item }) {
         picture: decoded.user_pic,
       }),
     });
-    const result = await response.json();
+    const result = await response.text();
     console.log(result);
-    setReview("")
+    setReview("");
   };
 
   return (
