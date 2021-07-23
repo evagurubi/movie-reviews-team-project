@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,8 +15,13 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
+    "mongodb-memory-server": "^7.3.1",
     "mongoose": "^5.13.3",
     "node-fetch": "^2.6.1",
-    "routes": "^2.1.0"
+    "routes": "^2.1.0",
+    "supertest": "^6.1.4"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
   }
 }

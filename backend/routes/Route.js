@@ -9,6 +9,10 @@ const verifyToken = require("../middlewares/veryfyToken");
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
+router.get("/test", async (req, res) => {
+  res.json({ message: "pass!" });
+});
+
 router.post("/login", (req, res) => {
   const code = req.body.code;
   const url = "https://oauth2.googleapis.com/token";
