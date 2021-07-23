@@ -1,0 +1,28 @@
+$btnColor: black;
+$btnBgColor: #f5c518;
+$bgColor: black;
+
+html {
+	background-color: $bgColor;
+
+	.btnContIn {
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		button {
+			text-transform: uppercase;
+			width: 8em;
+			height: 3em;
+			font-size: 1em;
+			font-weight: bolder;
+			letter-spacing: 2px;
+			color: $btnColor;
+			background-color: $btnBgColor;
+			border: 2px solid #212020;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+}

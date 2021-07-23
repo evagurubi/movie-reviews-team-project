@@ -1,0 +1,51 @@
+.reviewCont {
+  margin-top: 1rem;
+  margin-left: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviewCont button {
+  text-transform: uppercase;
+  height: 2em;
+  margin: 4em 0;
+  border-radius: 0;
+  border: 2px solid black;
+  border-right: none;
+}
+
+.reviewCont input {
+  height: 2em;
+  padding-left: 0.5em;
+  border-radius: 0;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.reviewCont input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.reviewCont input:-ms-input-placeholder {
+  text-align: center;
+}
+
+.reviewCont input::-ms-input-placeholder {
+  text-align: center;
+}
+
+.reviewCont input::placeholder {
+  text-align: center;
+}
+
+.reviewCont input:focus {
+  outline: none;
+}
+/*# sourceMappingURL=ReviewList.css.map */

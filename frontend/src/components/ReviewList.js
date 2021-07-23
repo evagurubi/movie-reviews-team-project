@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Review from "./Review";
+import './ReviewList.css';
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
   const [placeholder, setPlaceholder] = useState(true);
- // const [showAll, setShowAll] = useState(true);
+  // const [showAll, setShowAll] = useState(true);
   const [inputText, setSetInputText] = useState("");
   const [query, setQuery] = useState("");
 
@@ -30,7 +31,7 @@ function ReviewList() {
     if (placeholder) {
       setQuery(`movie=${inputText}`)
     } else {
-      setQuery(`movie=${inputText}`)
+      setQuery(`reviewer=${inputText}`)
     }
     //if (inputText.length > 1) fetchReviewsWithQuery();
   };
@@ -52,11 +53,11 @@ function ReviewList() {
   useEffect(() => {
     fetchReviewsWithQuery();
   }, [inputText])
-  
+
 
   return (
-    <div>
-      
+    <div className="reviewCont">
+
       <button onClick={() => setPlaceholder(!placeholder)}>Search by</button>
 
       <input

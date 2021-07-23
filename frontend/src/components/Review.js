@@ -3,8 +3,8 @@ import React from "react";
 function Review({ rev }) {
   return (
     <div>
-      <p>{rev.title}</p>
-      <p>{rev.content}</p>
+      <p className="reviewTitle">{rev.title}</p>
+      <p className="reviewContent">{rev.content}</p>
     </div>
   );
 }

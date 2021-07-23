@@ -1,0 +1,31 @@
+html {
+  background-color: black;
+}
+
+html .btnContIn {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html .btnContIn button {
+  text-transform: uppercase;
+  width: 8em;
+  height: 3em;
+  font-size: 1em;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: black;
+  background-color: #f5c518;
+  border: 2px solid #212020;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Login.css.map */

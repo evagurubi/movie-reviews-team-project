@@ -1,5 +1,6 @@
 import { useState } from "react";
 import jwt_decode from "jwt-decode";
+import './Movie.css';
 
 function Movie({ item }) {
   const [showWriteReview, setShowWriteReview] = useState(false);
@@ -30,10 +31,10 @@ function Movie({ item }) {
   };
 
   return (
-    <div>
-      <p>{item.title}</p>
-      <p>{item.release_date}</p>
-      <p>{item.overview}</p>
+    <div className="card">
+      <p className="title">{item.title}</p>
+      <p className="date">{item.release_date}</p>
+      <p className="overview">{item.overview}</p>
       <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}></img>
       <button onClick={() => setShowWriteReview(!showWriteReview)}>
         Leave Review

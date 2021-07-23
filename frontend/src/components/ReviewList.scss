@@ -1,0 +1,32 @@
+.reviewCont {
+	margin-top: 1rem;
+	margin-left: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	button {
+		text-transform: uppercase;
+		height: 2em;
+		margin: 4em 0;
+		border-radius: 0;
+		border: 2px solid black;
+		border-right: none;
+	}
+
+	input {
+		height: 2em;
+		padding-left: 0.5em;
+		border-radius: 0;
+		border: 2px solid black;
+		border-left: none;
+
+		&::placeholder {
+			text-align: center;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
