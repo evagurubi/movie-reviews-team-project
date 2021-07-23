@@ -13,7 +13,7 @@ exports.list = (movie, reviewer) => {
     if (movie && reviewer) {
       Review.find({
         title: { $regex: movie, $options: "i" },
-        reviewer_name: reviewer,
+        reviewer_name: { $regex: reviewer, $options: "i" },
       }).exec(function (err, reviews) {
         if (err) {
           reject(err);
@@ -37,14 +37,16 @@ exports.list = (movie, reviewer) => {
       });
     }
     if (reviewer) {
-      Review.find({ reviewer_name: reviewer }).exec(function (err, reviews) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(reviews);
-          // console.log(reviews);
+      Review.find({ reviewer_name: { $regex: reviewer, $options: "i" } }).exec(
+        function (err, reviews) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(reviews);
+            // console.log(reviews);
+          }
         }
-      });
+      );
     } else
       Review.find().exec(function (err, reviews) {
         if (err) {

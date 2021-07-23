@@ -11,6 +11,7 @@ exports.list = (req, res) => {
   let reviewer = null;
 
   if (req.query) {
+    console.log(req.query);
     if (req.query.movie) {
       movie = req.query.movie;
     }
