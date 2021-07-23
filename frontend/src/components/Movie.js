@@ -1,6 +1,6 @@
 import { useState } from "react";
 import jwt_decode from "jwt-decode";
-import './Movie.css';
+import "./Movie.css";
 
 function Movie({ item }) {
   const [showWriteReview, setShowWriteReview] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Review from "./Review";
-import './ReviewList.css';
+import "./ReviewList.css";
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
@@ -52,12 +52,10 @@ function ReviewList() {
 
   useEffect(() => {
     fetchReviewsWithQuery();
-  }, [inputText])
-
+  }, [inputText]);
 
   return (
     <div className="reviewCont">
-
       <button onClick={() => setPlaceholder(!placeholder)}>Search by</button>
 
       <input
@@ -65,10 +63,11 @@ function ReviewList() {
         onInput={searchHandler}
         value={inputText}
       ></input>
-
-      {reviewData !== undefined &&
-        //showAll &&
-        reviewData.map((rev, i) => <Review rev={rev} key={i} />)}
+      <div className="reviewList">
+        {reviewData !== undefined &&
+          //showAll &&
+          reviewData.map((rev, i) => <Review rev={rev} key={i} />)}
+      </div>
     </div>
   );
 }

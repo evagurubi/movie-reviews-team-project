@@ -2,8 +2,8 @@ import React from "react";
 
 function Review({ rev }) {
   return (
-    <div>
-      <p className="reviewTitle">{rev.title}</p>
+    <div className="review">
+      <h3 className="reviewTitle">{rev.title}</h3>
       <p className="reviewContent">{rev.content}</p>
     </div>
   );
