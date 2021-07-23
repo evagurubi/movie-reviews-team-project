@@ -25,7 +25,7 @@ function MovieList() {
   }, []);
 
   return (
-    <div>
+    <div className="cardCont">
       {data !== undefined
         ? data.results.map((item) => <Movie item={item} key={item.id} />)
         : "Loading"}

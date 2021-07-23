@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Review from "./Review";
+import './ReviewList.css';
 
 function ReviewList() {
   const [reviewData, setReviewData] = useState(undefined);
@@ -51,10 +52,12 @@ function ReviewList() {
 
   useEffect(() => {
     fetchReviewsWithQuery();
-  }, [inputText]);
+  }, [inputText])
+
 
   return (
-    <div>
+    <div className="reviewCont">
+
       <button onClick={() => setPlaceholder(!placeholder)}>Search by</button>
 
       <input

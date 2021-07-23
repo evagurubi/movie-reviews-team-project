@@ -6,8 +6,8 @@ import MovieList from "../components/MovieList";
 function MoviePage() {
   return (
     <div>
-      <Movies />
       <Logout />
+      <Movies />
       {/* <ReviewList /> */}
       <MovieList />
     </div>

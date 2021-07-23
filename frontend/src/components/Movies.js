@@ -31,7 +31,11 @@ function Movies() {
   return (
     <div>
       <h2>Logged in</h2>
-      <Link to="/reviews">Reviews</Link>
+      <div className="btnCenter">
+        <button>
+          <Link to="/reviews">Reviews</Link>
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,127 @@
+html {
+  color: white;
+}
+
+html h2 {
+  margin-left: 1em;
+  margin-top: 1rem;
+}
+
+html .btnCenter {
+  margin-top: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html input {
+  padding-left: 0.5em;
+}
+
+html input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+html input:-ms-input-placeholder {
+  text-align: center;
+}
+
+html input::-ms-input-placeholder {
+  text-align: center;
+}
+
+html input::placeholder {
+  text-align: center;
+}
+
+html input:focus {
+  outline: none;
+}
+
+html button,
+html input[type="submit"] {
+  width: 8em;
+  height: 3em;
+  font-size: 1em;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: black;
+  margin-bottom: 2em;
+  background-color: #f5c518;
+  border: 2px solid #212020;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+html button a,
+html input[type="submit"] a {
+  text-decoration: none;
+}
+
+html .card {
+  background-color: #212020;
+  text-align: center;
+  max-width: 40em;
+  border: 4px solid grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em auto;
+}
+
+html .card .title {
+  color: #f5c518;
+  font-size: 2em;
+  font-weight: bolder;
+  padding: 0 2em;
+  margin-bottom: 0;
+}
+
+html .card .date {
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: white;
+  padding: 0em 0.4em;
+  margin: 0.5em 0 0;
+  border-left: 3px solid #f5c518;
+  border-right: 3px solid #f5c518;
+}
+
+html .card .overview {
+  padding: 0 2em;
+}
+
+html .card img {
+  max-width: 100%;
+  margin: 0 0 2em;
+  border: 2px solid grey;
+}
+
+html .card input {
+  height: 2em;
+  margin-bottom: 2em;
+  border: 0;
+  border: 2px solid black;
+  border-right: none;
+}
+
+html .card input[type="submit"] {
+  height: 2em;
+  border-radius: 0;
+  border: 2px solid black;
+  border-left: none;
+}
+/*# sourceMappingURL=Movie.css.map */

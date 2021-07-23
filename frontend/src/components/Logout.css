@@ -1,0 +1,20 @@
+.btnContOut {
+  height: 100%;
+  float: right;
+  margin-right: 2em;
+}
+
+.btnContOut button,
+.btnContOut .btn {
+  width: 8em;
+  height: 3em;
+  font-size: 1em;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: black;
+  background-color: #f5c518;
+  border: 2px solid #212020;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Logout.css.map */
