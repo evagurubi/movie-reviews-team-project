@@ -61,7 +61,7 @@ router.post("/login", (req, res) => {
           user_pic: decoded.picture,
           given_name: decoded.given_name,
         },
-        "Signed by me"
+        process.env.TOKEN_SECRET
       );
 
       res.header("auth-token", token).json({ myToken });
