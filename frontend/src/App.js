@@ -9,15 +9,6 @@ import ReviewPage from "./pages/ReviewPage";
 function App() {
   const [user, setUser] = useState(null);
 
-  /* useEffect(() => {
-    let token = localStorage.getItem("myToken");
-    try {
-      if (jwt_decode(token)) setUser(jwt_decode(token));
-    } catch {
-      return;
-    }
-  }, []);*/
-
   return (
     <Router>
       <Switch>
@@ -30,3 +21,12 @@ function App() {
 }
 
 export default App;
+
+/* useEffect(() => {
+    let token = localStorage.getItem("myToken");
+    try {
+      if (jwt_decode(token)) setUser(jwt_decode(token));
+    } catch {
+      return;
+    }
+  }, []);*/
